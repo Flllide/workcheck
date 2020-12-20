@@ -1,5 +1,14 @@
 var Directory = document.querySelector('.Directory'); 
-
+this.Log = function(Message) {
+ if(Message === "h" ){
+   logFunctional.hideLog()
+ }else if(Message === "crW"){
+  numberWindow++;
+  Windows.push( new Window('Window'+numberWindow))
+ }else{
+  logFunctional.output(Message)
+ }
+}
 
 
 
@@ -11,6 +20,7 @@ function Window(ContainerId, number){
 
 function Constructor(ContainerId, number){
   this._render(ContainerId, number);
+  this._renderBacWind(ContainerId);
 };
 
 Constructor.prototype = {
@@ -36,10 +46,35 @@ Constructor.prototype = {
         <div class="window" id= "${ContainerId}">${ContainerId} <br/>
           <input class="clicker" id="${ContainerId+"Clicker"}" type="button" value="Кнопка" >
           <div class="display" id="${ContainerId+"Display"}">Результат</div> 
-        </div> 
+        </div>
     `;
+   // elementWindow.style.backgroundColor = this._generatorNackground(); 
      Directory.appendChild(elementWindow);
-     Log(`создан элемент ${ContainerId}`) 
+     Log(`создан элемент ${ContainerId}`);
+     
+   },
+   _renderBacWind: function(ContainerId){
+   var randNum = Math.floor(Math.random() * 3000);
+    setInterval(func, randNum); 
+    function func(){ 
+      var lix = `0px 0px 5px #${back()}`;
+      //Log(back()) 
+     //document.querySelector(`#${ContainerId}`).style.backgroundColor =back(); 
+     document.querySelector(`#${ContainerId}`).style["boxShadow"] = lix;
+     document.querySelector(`#${ContainerId}Clicker`).style["boxShadow"] = lix;
+    }
+    function back(){
+      
+      col = Math.round(50.0*Math.random());
+      r = col.toString(16);
+      col = Math.round(250.0*Math.random());
+      g=col.toString(16);
+      col = Math.round(250.0*Math.random());
+      d=col.toString(16);
+      col=r+g+d;
+      return col;
+   
+    }
    },
 }
 
@@ -53,11 +88,11 @@ Eventer.prototype = {
   
   _Listener: function(ContainerId) {
 		
-		this._ButtonWindow = document.querySelector(`#${ContainerId}Clicker`);
-		this._DisplayWindow = document.querySelector(`#${ContainerId}Display`);
+		var ButtonWindow = document.querySelector(`#${ContainerId}Clicker`);
+		var DisplayWindow = document.querySelector(`#${ContainerId}Display`);
 		self = this
-			this._ButtonWindow.addEventListener("click", function(){self._Click(ContainerId)});
-	       
+	    ButtonWindow.addEventListener("click", function(){self._Click(ContainerId)});
+	    
   },
   
   _Click: function(ContainerId){
