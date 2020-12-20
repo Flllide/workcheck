@@ -128,7 +128,7 @@ this.logFunctional = {
 }
 
 
-this.Log = function(Message) { 
+this.Log = function(Message) {
  if(Message === "h" ){
    logFunctional.hideLog()
  }else{
@@ -146,7 +146,8 @@ this.LogInteraction = function(option){
       }
       else if(option==="WriteSend"){
       var loggerDisplayValue = document.querySelector('.logConsWrite'). innerHTML;
-      eval(loggerDisplayValue);
+      var lo = loggerDisplayValue.replace(/(\n)/g,' ');
+      eval(`${lo}`);
         
       }
       else {
