@@ -1,0 +1,63 @@
+body {
+background: #000;
+color: #fff;
+}
+.Скрыть {
+display:none;
+}
+.car .ИнформПанель label{
+  font-weight: 900; 
+}
+.car .ИнформПанель span{
+ font-weight: 100; 
+}
+.car{
+ border: outset 4px #4e4E4E; 
+ margin:10px;
+ padding: 10px;
+ background: #2E2E2E;
+}
+.car hr {
+border: inset 6px #2E2E2E; 
+ }
+.window{
+ background: #1A1A1A;
+ width: 98%;
+ margin:1%;
+ padding:1%;
+ box-shadow: inset 1px 1px 0px #0F1211,inset 2px 2px 0px #060B0A ; 
+}
+.window .clicker{
+margin:1%;
+color:#fff;
+background:#666;
+border-radius: 1vh;
+border:none;
+box-shadow:1px 1px 0px #365615;
+text-shadow:0px 0px 3px #2ff; 
+}
+.window .clicker:focus{
+  outline:none;
+}
+.window .clicker:active{
+  color:#36f615;
+  box-shadow: none;
+  position:relative;
+  top:1px;
+  left:1px;
+}
+.window .display{
+font-size: 80%;
+color: rgba(255, 255, 255, 0.7); 
+margin:1%;
+padding:1%;
+background: #292929;
+min-height: 30px;
+box-shadow: inset 1px 1px 0px #0F1211,inset 2px 2px 0px #060B0A ; 
+}
+
+.Directory{
+  padding: 5px;
+  margin: 5px;
+  background: green;
+ }
